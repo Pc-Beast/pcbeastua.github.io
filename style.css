@@ -1,1 +1,17 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Arial;
+  padding: 20px;
+}
 
+h1 {
+  color: lime;
+}
+
+.product {
+  background: #1e1e1e;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
