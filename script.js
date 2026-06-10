@@ -1,316 +1,58 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC_Beast Прайс - Магазин Комп'ютерів та Відеокарт</title>
-    <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --accent-color: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
-        }
+const products = [
+  { id: 1, name: "MSI GTX 1650 SUPER GAMING 4GB", price: 1500, stock: 1 },
+  { id: 2, name: "MSI RX 570 GAMING 4GB", price: 1900, stock: 3 },
+  { id: 3, name: "MSI GTX 970 GAMING 4GB", price: 2000, stock: 3 },
+  { id: 4, name: "ASUS ROG STRIX RX 570 4GB", price: 2000, stock: 3 },
+  { id: 5, name: "Sapphire Nitro+ RX 580 4GB", price: 2600, stock: 3 },
+  { id: 6, name: "MSI GTX 1050 Ti 4GB", price: 3200, stock: 3 },
+  { id: 7, name: "EVGA GTX 1060 3GB", price: 3200, stock: 3 },
+  { id: 8, name: "Palit GTX 1060 6GB", price: 5000, stock: 3 },
+  { id: 9, name: "Palit GTX 1660 SUPER 6GB", price: 5800, stock: 3 },
+  { id: 10, name: "MSI RX 5600 XT 6GB", price: 6200, stock: 3 },
+  { id: 11, name: "Sapphire RX 5700 XT 8GB", price: 7000, stock: 3 },
+  { id: 12, name: "Inno3D RTX 3060 12GB", price: 11900, stock: 3 },
+  { id: 13, name: "ASUS RTX 3060 12GB", price: 12000, stock: 3 },
+  { id: 14, name: "Gigabyte RTX 3060 12GB", price: 12000, stock: 3 },
+  { id: 15, name: "ASRock RX 6700 XT 12GB", price: 12000, stock: 3 },
+  { id: 16, name: "Palit RTX 3060 Ti 8GB", price: 12700, stock: 3 },
+  { id: 17, name: "Gigabyte RTX 3060 Ti 8GB", price: 13000, stock: 3 },
+  { id: 18, name: "Gigabyte RTX 3070 8GB", price: 13700, stock: 3 },
+  { id: 19, name: "Gigabyte RTX 4060 8GB", price: 14300, stock: 3 },
+  { id: 20, name: "ASUS RTX 4060 8GB", price: 14400, stock: 3 },
+  { id: 21, name: "Palit RTX 3070 Ti 8GB", price: 15000, stock: 3 }
+];
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
+const container = document.getElementById("products");
 
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
+function renderProducts() {
+  container.innerHTML = "";
 
-        header {
-            background-color: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            padding: 2.5rem 1rem;
-            text-align: center;
-        }
+  products.forEach(product => {
+    const card = document.createElement("div");
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    card.className = "product-card";
 
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
+    card.innerHTML = 
+      <h3>${product.name}</h3>
+      <p><strong>${product.price.toLocaleString()} грн</strong></p>
+      <p>В наличии: ${product.stock}</p>
+      <button onclick="buyProduct(${product.id})">
+        Купить
+      </button>
+    ;
 
-        header h1 span {
-            color: var(--accent-color);
-        }
+    container.appendChild(card);
+  });
+}
 
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
+function buyProduct(id) {
+  const product = products.find(p => p.id === id);
 
-        .tg-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #0088cc;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
-        }
+  if (!product) return;
 
-        .tg-btn:hover {
-            background-color: #0077b3;
-            transform: translateY(-2px);
-        }
+  alert(
+    Товар: ${product.name}\nЦена: ${product.price} грн
+  );
+}
 
-        .tg-btn svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            fill: currentColor;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .search-filter-bar {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-
-        .filter-tabs {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .tab-btn {
-            background-color: var(--bg-primary);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-primary);
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-size: 1.75rem;
-            margin: 2rem 0 1rem 0;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.75rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            border-color: #475569;
-        }
-
-        .badge-container {
-            display: flex;
-            gap: 0.4rem;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .badge-status { background-color: #334155; color: #f1f5f9; }
-        .badge-warranty { background-color: #0369a1; color: #e0f2fe; }
-        .badge-package { background-color: #14532d; color: #dcfce7; }
-        .badge-danger { background-color: var(--danger-color); color: white; }
-
-        .product-name {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            flex-grow: 1;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .product-price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .product-price span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-left: 2px;
-        }
-
-        .buy-btn {
-            background-color: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 0.4rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .buy-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-primary);
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <h1>PC_Beast <span>Прайс</span></h1>
-            <p>Актуальні комплектуючі та готові ПК за кращими цінами</p>
-            <a href="https://t.me/bybo4lka" target="_blank" class="tg-btn">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-0.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.4
-
-
-
-
-
-
-
-
-
-
-
-
-age": "Повна", "warranty": "3", "desc": "Повний комплект у коробці, стан нової."},
-            {"name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "Преміальне виконання, повний комплект у коробці."},
-            {"name": "ASUS DUAL RX 9060 XT 8 GB GDDR6", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "Повний оригінальний комплект."},
-            {"name": "Palit RTX 5060 White OC 8GB GDDR7", "price": 17000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "Сучасне покоління GDDR7, біле виконання, повний комплект."},
-            {"name": "ASUS DUAL RTX 4070 WHITE OC 12GB GDDR6X", "price": 24850, "status": "Б/В, У1", "package": "Не повна", "warranty": "3", "desc": "Без оригінального пакування. Топова біла відеокарта."}
-        ];
-const computersData = [
-            { "name": "PCBEAST8 - Комп'ютер i5-3550 / RX 550 4GB / RAM 12GB DDR3 / SSD 120GB + HDD 500GB", "status": "Б/В", "package": "Повна комплектація", "warranty": "6 міс.", "price": 4000, "desc": "Материнська плата ASUS P8H77-M PRO, блок живлення Cooler Master 500W, кулер DeepCool." },
-            { "name": "PCBEAST7 - Потужний ПК Ryzen 5 3600 / RTX 2060 6GB / RAM 16GB DDR4 / M.2 SSD 500GB", "status": "Б/В", "package": "Повна комплектація", "warranty": "6 міс.", "price": 24500, "desc": "Кастомна збірка в білому корпусі NZXT H210, охолодження ID-Cooling Frozn A410 GDL, 3 кулери be quiet!, БЖ Corsair CX650M." }
-        ];
-
-        const gpusData = [
-            { "name": "MSI GTX 1650 SUPER GAMING 4GB GDDR6", "price": 1500, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "0", "desc": "Без оригінального пакування. Уцінка: Не працює під навантаженням (перестає працювати у іграх і 3D-застосунках)." },
-            { "name": "MSI RX 570 GAMING 4GB GDDR5", "price": 1900, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "MSI GTX 970 Gaming 100ME 4GB GDDR5", "price": 2000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування. Без бекплейту." },
-            { "name": "ASUS ROG STRIX RX 570 GAMING OC 4GB GDDR5", "price": 2000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Sapphire NITRO+ RX 580 4 GB GDDR5", "price": 2600, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "MSI GTX 1050 Ti AERO ITX OCV1 4GB GDDR5", "price": 3200, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "MSI GTX 1050 Ti OC 4GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "ASUS CERBERUS GTX 1050 Ti OC 4GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "EVGA GTX 1060 SC ACX 2.0 3GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Palit GTX 1060 Dual GP104 3GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "ASUS DUAL GTX 1060 OC 3GB GDDR5", "price": 3300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "GIGABYTE GTX 1060 WindForce 2X OC 3GB GDDR5", "price": 3300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "XFX RS RX 570 XXX Edition 8 GB GDDR5", "price": 3300, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "ASRock RX 6500 XT Phantom Gaming D OC 4GB GDDR6", "price": 4400, "status": "Б/В, У1", "package": "Повна", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Palit GTX 1660 Dual 6GB GDDR5", "price": 5000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "Inno3D iChill GTX 1070 X3 8GB GDDR5", "price": 5400, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "Palit GTX 1660 SUPER StormX OC 6GB GDDR6", "price": 5800, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Gainward GTX 1660 SUPER Pegasus 6GB GDDR6", "price": 6100, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "MSI RX 5600 XT GAMING X 6GB GDDR6", "price": 6200, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "MSI GTX 1660 Ti VENTUS XS OC 6GB GDDR6", "price": 6300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Sapphire PULSE RX 5700 OC Triple-X fan 8GB GDDR6", "price": 7000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Inno3D RTX 3060 TWIN X2 LHR rev 1.0 12GB GDDR6", "price": 11900, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "ASUS PHOENIX RTX 3060 V2 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "GIGABYTE RTX 3060 WINDFORCE OC Rev. 2.0 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "ASRock RX 6700 XT Challenger Pro OC 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Повна", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "Palit RTX 3060 Ti Dual OC V1 LHR 8GB GDDR6", "price": 12700, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "GIGABYTE RTX 3060 Ti GAMING OC 8GB GDDR6", "price": 13000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Протестована, готова до роботи." },
-            { "name": "GIGABYTE RTX 3060 Ti GAMING OC Rev. 2.0 8GB GDDR6", "price": 13300, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "GIGABYTE RTX 3070 GAMING OC 8GB GDDR6", "price": 13700, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "GIGABYTE RTX 4060 GAMING OC 8GB GDDR6", "price": 14300, "status": "Б/В", "package": "Не повна", "warranty": "3", "desc": "Уцінка: Не працює підсвітка логотипу. Без оригінального пакування." },
-            { "name": "ASUS DUAL RTX 4060 EVO OC 8GB GDDR6", "price": 14300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
-            { "name": "ASUS DUAL RTX 4060 EVO OC 8GB GDDR6", "price": 14400, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "
-warranty": "3", "desc": "В оригінальній упаковці (Позиція 2)." },
-            { "name": "ASUS DUAL RX 9060 XT 8 GB GDDR6", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "Palit RTX 5060 White OC 8GB GDDR7", "price": 17000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
-            { "name": "ASUS DUAL RTX 4070 WHITE OC 12GB GDDR6X", "price": 24850, "status": "Б/В, У1", "package": "Не повна", "warranty": "3", "desc": "Без оригінального пакування." }
-        ];
+renderProducts();
