@@ -97,3 +97,20 @@ header{
     color:white;
     cursor:pointer;
 }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.category{
+    background:#1c1c1c;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.category h2{
+    color:#00bfff;
+}
+    
