@@ -298,3 +298,8 @@ const computersData = [
             { "name": "ASUS DUAL RTX 4060 EVO OC 8GB GDDR6", "price": 14400, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
             { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
             { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "
+warranty": "3", "desc": "В оригінальній упаковці (Позиція 2)." },
+            { "name": "ASUS DUAL RX 9060 XT 8 GB GDDR6", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "Palit RTX 5060 White OC 8GB GDDR7", "price": 17000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "ASUS DUAL RTX 4070 WHITE OC 12GB GDDR6X", "price": 24850, "status": "Б/В, У1", "package": "Не повна", "warranty": "3", "desc": "Без оригінального пакування." }
+        ];
