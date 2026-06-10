@@ -285,3 +285,47 @@
             {"name": "Palit RTX 5060 White OC 8GB GDDR7", "price": 17000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "Сучасне покоління GDDR7, біле виконання, повний комплект."},
             {"name": "ASUS DUAL RTX 4070 WHITE OC 12GB GDDR6X", "price": 24850, "status": "Б/В, У1", "package": "Не повна", "warranty": "3", "desc": "Без оригінального пакування. Топова біла відеокарта."}
         ];
+const computersData = [
+            { "name": "PCBEAST8 - Комп'ютер i5-3550 / RX 550 4GB / RAM 12GB DDR3 / SSD 120GB + HDD 500GB", "status": "Б/В", "package": "Повна комплектація", "warranty": "6 міс.", "price": 4000, "desc": "Материнська плата ASUS P8H77-M PRO, блок живлення Cooler Master 500W, кулер DeepCool." },
+            { "name": "PCBEAST7 - Потужний ПК Ryzen 5 3600 / RTX 2060 6GB / RAM 16GB DDR4 / M.2 SSD 500GB", "status": "Б/В", "package": "Повна комплектація", "warranty": "6 міс.", "price": 24500, "desc": "Кастомна збірка в білому корпусі NZXT H210, охолодження ID-Cooling Frozn A410 GDL, 3 кулери be quiet!, БЖ Corsair CX650M." }
+        ];
+
+        const gpusData = [
+            { "name": "MSI GTX 1650 SUPER GAMING 4GB GDDR6", "price": 1500, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "0", "desc": "Без оригінального пакування. Уцінка: Не працює під навантаженням (перестає працювати у іграх і 3D-застосунках)." },
+            { "name": "MSI RX 570 GAMING 4GB GDDR5", "price": 1900, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "MSI GTX 970 Gaming 100ME 4GB GDDR5", "price": 2000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування. Без бекплейту." },
+            { "name": "ASUS ROG STRIX RX 570 GAMING OC 4GB GDDR5", "price": 2000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Sapphire NITRO+ RX 580 4 GB GDDR5", "price": 2600, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "MSI GTX 1050 Ti AERO ITX OCV1 4GB GDDR5", "price": 3200, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "MSI GTX 1050 Ti OC 4GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "ASUS CERBERUS GTX 1050 Ti OC 4GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "EVGA GTX 1060 SC ACX 2.0 3GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Palit GTX 1060 Dual GP104 3GB GDDR5", "price": 3200, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "ASUS DUAL GTX 1060 OC 3GB GDDR5", "price": 3300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "GIGABYTE GTX 1060 WindForce 2X OC 3GB GDDR5", "price": 3300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "XFX RS RX 570 XXX Edition 8 GB GDDR5", "price": 3300, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "ASRock RX 6500 XT Phantom Gaming D OC 4GB GDDR6", "price": 4400, "status": "Б/В, У1", "package": "Повна", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Palit GTX 1660 Dual 6GB GDDR5", "price": 5000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "Inno3D iChill GTX 1070 X3 8GB GDDR5", "price": 5400, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "Palit GTX 1660 SUPER StormX OC 6GB GDDR6", "price": 5800, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Gainward GTX 1660 SUPER Pegasus 6GB GDDR6", "price": 6100, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "MSI RX 5600 XT GAMING X 6GB GDDR6", "price": 6200, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "MSI GTX 1660 Ti VENTUS XS OC 6GB GDDR6", "price": 6300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Sapphire PULSE RX 5700 OC Triple-X fan 8GB GDDR6", "price": 7000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Inno3D RTX 3060 TWIN X2 LHR rev 1.0 12GB GDDR6", "price": 11900, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "ASUS PHOENIX RTX 3060 V2 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "GIGABYTE RTX 3060 WINDFORCE OC Rev. 2.0 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "ASRock RX 6700 XT Challenger Pro OC 12GB GDDR6", "price": 12000, "status": "Б/В, У1", "package": "Повна", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Palit RTX 3060 Ti Dual OC V1 LHR 8GB GDDR6", "price": 12700, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "GIGABYTE RTX 3060 Ti GAMING OC 8GB GDDR6", "price": 13000, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Протестована, готова до роботи." },
+            { "name": "GIGABYTE RTX 3060 Ti GAMING OC Rev. 2.0 8GB GDDR6", "price": 13300, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "GIGABYTE RTX 3070 GAMING OC 8GB GDDR6", "price": 13700, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "GIGABYTE RTX 4060 GAMING OC 8GB GDDR6", "price": 14300, "status": "Б/В", "package": "Не повна", "warranty": "3", "desc": "Уцінка: Не працює підсвітка логотипу. Без оригінального пакування." },
+            { "name": "ASUS DUAL RTX 4060 EVO OC 8GB GDDR6", "price": 14300, "status": "Б/В, У1", "package": "Без комплектації", "warranty": "3", "desc": "Без оригінального пакування." },
+            { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6X", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "Palit RTX 3070 Ti GameRock 8GB GDDR6Xl", "price": 15000, "status": "Б/В", "package": "Повна", "
+                  warranty": "3", "desc": "В оригінальній упаковці (Позиція 2)." },
+            { "name": "ASUS DUAL RX 9060 XT 8 GB GDDR6", "price": 15000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "Palit RTX 5060 White OC 8GB GDDR7", "price": 17000, "status": "Б/В", "package": "Повна", "warranty": "3", "desc": "В оригінальній упаковці." },
+            { "name": "ASUS DUAL RTX 4070 WHITE OC 12GB GDDR6X", "price": 24850, "status": "Б/В, У1", "package": "Не повна", "warranty": "3", "desc": "Без оригінального пакування." }
+        ];
