@@ -16,24 +16,6 @@ header{
 <header>
     <h1>MAX PC SHOP</h1>
 </header>
-
-<div class="container">
-
-    <div class="category">
-        <h2>🎮 Видеокарты</h2>
-    </div>
-
-    <div class="category">
-        <h2>⚡ Процессоры</h2>
-    </div>
-
-    <div class="category">
-        <h2>💾 ОЗУ</h2>
-    </div>
-
-</div>
-
-</body>
     text-align:center;
     padding:30px;
     background:#000;
