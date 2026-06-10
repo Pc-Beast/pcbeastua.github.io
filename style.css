@@ -53,6 +53,22 @@ header{
     height:200px;
     object-fit:cover;
 }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.category{
+    background:#1c1c1c;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.category h2{
+    color:#00bfff;
+}
 
 .card h3{
     padding:10px;
