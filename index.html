@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC-Beast | Магазин компьютерной техники</title>
+    <title>PC-Beast | Магазин комп'ютерної техніки</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,10 @@
             <a href="#" class="logo">PC-<span>Beast</span></a>
             <nav class="nav">
                 <a href="#catalog">Каталог</a>
-                <a href="#about">О нас</a>
-                <a href="#contacts">Контакты</a>
+                <a href="#about">Про нас</a>
+                <a href="#" onclick="alert('м. Кременчук, вул. Велика Набережна, 2Г')">О нас</a>
+                <a href="#contacts">Контакти</a>
+               <a href="https://t.me/bybo4lka" target="_blank">Контакты</a>
             </nav>
             <div class="cart-box">
                 <button class="cart-btn" id="cartBtn">🛒 Корзина (<span id="cart-count">0</span>)</button>
@@ -26,15 +28,15 @@
     <!-- Главный баннер -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Мощное железо для любых задач</h1>
-            <p>Собери ПК своей мечты с гарантией до года и быстрой доставкой.</p>
+            <h1>Потужне залізо для будь-яких завдань</h1>
+            <p>Збери ПК своєї мрії з гарантією до року та швидкою доставкою.</p>
             <a href="#catalog" class="btn">В каталог</a>
         </div>
     </section>
 
     <!-- Каталог товаров -->
     <main class="catalog container" id="catalog">
-        <h2>Популярные товары</h2>
+        <h2>Популярні товари</h2>
         <div class="products-grid">
             
             <!-- Карточка 1 -->
@@ -42,7 +44,7 @@
                 <div class="product-badge">Топ продаж</div>
                 <div class="product-img-placeholder">GPU</div>
                 <h3 class="product-title">Видеокарта RTX 4070 Super 12GB</h3>
-                <p class="product-price">41 525 ₴</p>
+                <p class="product-price">₴</p>
                 <button class="btn buy-btn" onclick="addToCart()">В корзину</button>
             </div>
 
@@ -51,7 +53,7 @@
                 <div class="product-badge">Новинка</div>
                 <div class="product-img-placeholder">CPU</div>
                 <h3 class="product-title">Процессор Intel Core i7-14700K</h3>
-                <p class="product-price">45 200 ₴</p>
+                <p class="product-price"> ₴</p>
                 <button class="btn buy-btn" onclick="addToCart()">В корзину</button>
             </div>
 
@@ -67,8 +69,8 @@
             <div class="product-card">
                 <div class="product-img-placeholder">SSD</div>
                 <h3 class="product-title">SSD M.2 NVMe Kingston 1TB</h3>
-                <p class="product-price">8 400 ₴</p>
-                <button class="btn buy-btn" onclick="addToCart()">В корзину</button>
+                <p class="product-price"> ₴</p>
+                <button class="btn buy-btn" onclick="addToCart()">У кошик</button>
             </div>
 
         </div>
@@ -77,7 +79,7 @@
     <!-- Подвал сайта -->
     <footer class="footer" id="contacts">
         <div class="container">
-            <p>&copy; 2026 PC-Tech. Все права защищены. Доставка по всей Украине.</p>
+            <p>&copy; 2026 PC-Beast.Усі права захищені. Доставка по всій Україні.</p>
         </div>
     </footer>
 
