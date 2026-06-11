@@ -1,1 +1,32 @@
+<div class="product-container">
 
+    <div class="gallery">
+        <img id="mainImage" src="img/Pc.jpg" class="main-image">
+
+        <div class="thumbs">
+            <img src="img/gtx1050.jpg" onclick="changeImage(this.src)">
+            <img src="img/gtx10501.jpg" onclick="changeImage(this.src)">
+            <img src="img/gtx10502.jpg" onclick="changeImage(this.src)">
+            <img src="img/gtx10503.jpg" onclick="changeImage(this.src)">
+        </div>
+    </div>
+
+    <div class="info">
+        <h1>Відеокарта</h1>
+
+        <p>
+          Відеокарта MSI GeForce GTX 1650 SUPER GAMING 4GB GDDR6 
+        </p>
+
+        <h2>1600 ₴</h2>
+
+        <button class="buy-btn">Купить</button>
+    </div>
+
+</div>
+
+<script>
+function changeImage(src){
+    document.getElementById("mainImage").src = src;
+}
+</script>
