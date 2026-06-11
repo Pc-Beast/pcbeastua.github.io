@@ -1,27 +1,33 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Игровой ПК Ryzen 5 5500</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="product-container">
 
-<h1>Игровой ПК Ryzen 5 5500</h1>
+    <div class="gallery">
+        <img id="mainImage" src="img/Pc.jpg" class="main-image">
 
-<img src="img/Pc.jpg" width="400">
-<img src="img/Pc2.jpg" width="400">
-<img src="img/Pc3.jpg" width="400">
+        <div class="thumbs">
+            <img src="img/Pc.jpg" onclick="changeImage(this.src)">
+            <img src="img/Pc2.jpg" onclick="changeImage(this.src)">
+            <img src="img/Pc3.jpg" onclick="changeImage(this.src)">
+        </div>
+    </div>
 
-<p>
-Ryzen 5 5500, RX 5600 XT 6GB, 16GB DDR4,
-SSD + HDD, СВО Arctic.
-Подходит для GTA V, CS2, Fortnite, Warzone и других игр.
-</p>
+    <div class="info">
+        <h1>Игровой ПК Ryzen 5 5500</h1>
 
-<p><b>Цена: 25999₴</b></p>
+        <p>
+            Ryzen 5 5500, RX 5600 XT 6GB,
+            16GB DDR4, SSD + HDD,
+            СВО Arctic.
+        </p>
 
-<a href="index.html">← Назад в каталог</a>
+        <h2>25999 ₴</h2>
 
-</body>
-</html>
+        <button class="buy-btn">Купить</button>
+    </div>
+
+</div>
+
+<script>
+function changeImage(src){
+    document.getElementById("mainImage").src = src;
+}
+</script>
